@@ -3,15 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {environment} from "../environments/environment.prod";
+import { Environment } from '../environments/environment'
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-const firebaseConfig = environment.firebaseConfig;
+import { TopComponent } from './top/top.component';
+import { HomeComponent } from './home/home.component';
+import { AllComponent } from './all/all.component';
+import { FavoritesComponent } from './favorites/favorites.component';
+const firebaseConfig = Environment.firebaseConfig;
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopComponent,
+    HomeComponent,
+    AllComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,
