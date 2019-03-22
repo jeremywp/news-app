@@ -2,6 +2,10 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+export const environment = {
+  production: false
+};
+
 export var config = {
   apiKey: "AIzaSyA4zj0vFHbzLZg6tw1IozNC0pBaY0_TxnM",
   authDomain: "capstone-project-5e5ad.firebaseapp.com",
