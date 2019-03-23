@@ -11,6 +11,9 @@ import { TopComponent } from './top/top.component';
 import { HomeComponent } from './home/home.component';
 import { AllComponent } from './all/all.component';
 import { FavoritesComponent } from './favorites/favorites.component';
+import {MatButtonModule, MatCardModule, MatToolbarModule} from "@angular/material";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {FlexLayoutModule} from "@angular/flex-layout";
 const firebaseConfig = config;
 
 @NgModule({
@@ -27,6 +30,11 @@ const firebaseConfig = config;
     AngularFireAuthModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
