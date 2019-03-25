@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from "../api-service.service";
+import {Observable} from "rxjs";
+import {Article} from "../article";
 
 @Component({
   selector: 'app-top',
@@ -7,6 +9,7 @@ import {ApiService} from "../api-service.service";
   styleUrls: ['./top.component.css']
 })
 export class TopComponent implements OnInit {
+  articles$: Observable<Article[]>;
 
   constructor(private newsService: ApiService) {
 
@@ -16,6 +19,7 @@ export class TopComponent implements OnInit {
     this.newsService.getTopNews()
       .subscribe(data => {
         console.log(data);
+        this.articles$ = data.articles;
       });
   }
 
