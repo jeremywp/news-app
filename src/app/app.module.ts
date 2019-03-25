@@ -14,6 +14,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import {MatButtonModule, MatCardModule, MatToolbarModule} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
+import {HttpClientModule} from "@angular/common/http";
 const firebaseConfig = config;
 
 @NgModule({
@@ -34,7 +35,8 @@ const firebaseConfig = config;
     MatToolbarModule,
     MatButtonModule,
     BrowserAnimationsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
