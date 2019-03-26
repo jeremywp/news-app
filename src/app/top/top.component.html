@@ -1,5 +1,4 @@
-<mat-card *ngIf="signedIn && getTopNews">
-  <mat-card *ngFor="let article of articles$">
-
-  </mat-card>
+<mat-card *ngFor="let article of articles$">
+  <mat-card-title>{{ article.title }} by {{ article.author }} -</mat-card-title>
+  <mat-card-content>{{ article.description }}</mat-card-content>
 </mat-card>

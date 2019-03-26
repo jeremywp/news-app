@@ -28,7 +28,6 @@ export class AppComponent {
         this.signedIn = true;
         console.log(user);
       });
-    this.router.navigate(['Top', { user: JSON.stringify(user) }]);
   }
 
 }

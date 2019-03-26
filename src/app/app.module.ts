@@ -15,6 +15,7 @@ import {MatButtonModule, MatCardModule, MatToolbarModule} from "@angular/materia
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {HttpClientModule} from "@angular/common/http";
+import {MatCardSmImage} from "../../node_modules/@angular/material/typings/esm5/card";
 const firebaseConfig = config;
 
 @NgModule({
@@ -36,7 +37,7 @@ const firebaseConfig = config;
     MatButtonModule,
     BrowserAnimationsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

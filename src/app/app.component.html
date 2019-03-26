@@ -3,7 +3,7 @@
   <button mat-button [routerLink]="['/Top']">Top Articles</button>
   <button mat-button [routerLink]="['/All']">Show All Articles</button>
   <button mat-button [routerLink]="['/Favorites']">Favorites</button>
-  <img *ngIf="signedIn" slot="end" id="profile_pic" src="{{user.picture}}" alt="{{user.name}}">
+  <img *ngIf="signedIn | async as user" slot="end" id="profile_pic" src="{{user.picture}}" alt="{{user.name}}">
   <img *ngIf="!signedIn" slot="end" mat-card-image id="signInButton" (click)="signIn()" src="../../assets/images/Google-sign-in.png" alt="Google sign in button">
 </mat-toolbar>
 

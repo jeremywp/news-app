@@ -18,8 +18,8 @@ export class TopComponent implements OnInit {
   ngOnInit() {
     this.newsService.getTopNews()
       .subscribe(data => {
-        console.log(data);
         this.articles$ = data.articles;
+        console.log(this.articles$);
       });
   }
 

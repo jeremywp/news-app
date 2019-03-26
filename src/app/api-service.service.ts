@@ -12,7 +12,6 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getTopNews(){
-    console.log(this.http.get(this.topURL));
     return this.http.get(this.topURL);
   }
 }
