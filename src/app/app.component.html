@@ -1,29 +1,25 @@
 <mat-toolbar color="primary" fxLayout="row">
-  <span>News App</span>
-  <button mat-button [routerLink]="['/Top']">Top Articles</button>
-  <button mat-button [routerLink]="['/All']">Search All Articles</button>
-  <button mat-button [routerLink]="['/Favorites']">Favorites</button>
+  <button class="home" mat-button [routerLink]="['/Home']">News App</button>
 
-  <!--This fills the remaining space of the current row-->
-  <span class="example-fill-remaining-space"></span>
 
   <div *ngIf="auth.user | async; then authenticated else guest">
-    <!-- template will replace this div -->
   </div>
 
-  <!-- User NOT logged in -->
   <ng-template #guest>
-    <!-- <p>Login to get started...</p> -->
+    <span class="fill"></span>
     <button mat-raised-button class='loginButton' (click)="auth.googleLogin()">Connect With Google</button>
   </ng-template>
 
-  <!-- User logged in -->
   <ng-template #authenticated>
+    <button mat-button [routerLink]="['/Top']">Top Articles</button>
+    <button mat-button [routerLink]="['/All']">Search All Articles</button>
+    <button mat-button [routerLink]="['/Favorites']">Favorites</button>
+    <span class="fill"></span>
     <div class='loginInfo' *ngIf="auth.user | async as user">
       <h3 class="userName">{{ user.displayName }}</h3>
-      <img class='avatar' mat-card-avatar [src]="user.photoURL" [routerLink]="['trails-of-user']">
-      <button mat-raised-button class='logoutButton' (click)="auth.signOut()">Logout</button>
+      <img class='avatar' mat-card-avatar [src]="user.photoURL" [routerLink]="['/Favorites']">
     </div>
+    <button mat-raised-button class='logoutButton' (click)="auth.signOut()">Logout</button>
   </ng-template>
 
 </mat-toolbar>

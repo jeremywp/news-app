@@ -11,7 +11,14 @@ import { TopComponent } from './top/top.component';
 import { HomeComponent } from './home/home.component';
 import { AllComponent } from './all/all.component';
 import { FavoritesComponent } from './favorites/favorites.component';
-import {MatButtonModule, MatCardModule, MatFormFieldModule, MatInputModule, MatToolbarModule} from "@angular/material";
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatToolbarModule
+} from "@angular/material";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {HttpClientModule} from "@angular/common/http";
@@ -39,7 +46,8 @@ const firebaseConfig = config;
     FlexLayoutModule,
     HttpClientModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

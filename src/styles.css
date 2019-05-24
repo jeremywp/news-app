@@ -5,4 +5,62 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #dadfea; }
 .mat-card {
   margin-bottom: 5px;
+
+}
+
+.mat-card-style {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+mat-card img{
+  object-fit: cover; /*this makes de image in src fit to the size of specified below*/
+  width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+  height: 80%;
+}
+
+.img-container {
+  width: 150px;
+  height: 100px;
+
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.home {
+  font-size: larger;
+}
+
+.fill {
+  flex: 1 1 auto;
+}
+
+.loginInfo{
+  display: flex;
+
+}
+
+.avatar {
+  margin-left: 10px;
+  margin-right: 20px;
+  outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .userName {
+    display: none;
+  }
+
+  .title {
+    display:none;
+  }
+}
+
+mat-form-field {
+  display: flex;
+  flex-direction: row;
 }
