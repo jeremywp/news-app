@@ -3,8 +3,29 @@
   <button mat-button [routerLink]="['/Top']">Top Articles</button>
   <button mat-button [routerLink]="['/All']">Search All Articles</button>
   <button mat-button [routerLink]="['/Favorites']">Favorites</button>
-  <img *ngIf="signedIn | async as user" slot="end" id="profile_pic" src="{{user.picture}}" alt="{{user.name}}">
-  <img *ngIf="!signedIn" slot="end" mat-card-image id="signInButton" (click)="signIn()" src="../../assets/images/Google-sign-in.png" alt="Google sign in button">
+
+  <!--This fills the remaining space of the current row-->
+  <span class="example-fill-remaining-space"></span>
+
+  <div *ngIf="auth.user | async; then authenticated else guest">
+    <!-- template will replace this div -->
+  </div>
+
+  <!-- User NOT logged in -->
+  <ng-template #guest>
+    <!-- <p>Login to get started...</p> -->
+    <button mat-raised-button class='loginButton' (click)="auth.googleLogin()">Connect With Google</button>
+  </ng-template>
+
+  <!-- User logged in -->
+  <ng-template #authenticated>
+    <div class='loginInfo' *ngIf="auth.user | async as user">
+      <h3 class="userName">{{ user.displayName }}</h3>
+      <img class='avatar' mat-card-avatar [src]="user.photoURL" [routerLink]="['trails-of-user']">
+      <button mat-raised-button class='logoutButton' (click)="auth.signOut()">Logout</button>
+    </div>
+  </ng-template>
+
 </mat-toolbar>
 
 <router-outlet></router-outlet>
