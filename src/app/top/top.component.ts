@@ -18,6 +18,7 @@ export class TopComponent implements OnInit {
   ngOnInit() {
     this.newsService.getTopNews()
       .subscribe(data => {
+        // @ts-ignore
         this.articles$ = data.articles;
         console.log(this.articles$);
       });

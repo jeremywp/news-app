@@ -9,10 +9,18 @@ export class ApiService {
     'country=us&' +
     'apiKey=bd8960afdf9948aaa291d793d20c2915';
 
+  private allURL = 'https://newsapi.org/v2/everything?' +
+    'q=e&' +
+    'apiKey=bd8960afdf9948aaa291d793d20c2915';
+
   constructor(private http: HttpClient) { }
 
   getTopNews(){
     return this.http.get(this.topURL);
+  }
+
+  getAllNews() {
+    return this.http.get(this.allURL);
   }
 }
 
