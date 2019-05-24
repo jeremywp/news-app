@@ -1,4 +1,7 @@
 <mat-card *ngFor="let article of articles$">
-  <mat-card-title>{{ article.title }} by {{ article.author }} -</mat-card-title>
+  <mat-card-title-group>
+    <mat-card-title>{{ article.title }}</mat-card-title>
+    <mat-card-subtitle *ngIf="article.author">by {{ article.author }}</mat-card-subtitle>
+  </mat-card-title-group>
   <mat-card-content>{{ article.description }}</mat-card-content>
 </mat-card>

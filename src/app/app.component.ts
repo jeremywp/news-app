@@ -1,7 +1,4 @@
 import {Component} from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase';
-import {Router} from "@angular/router";
 import {SignInService} from "./auth/signin.service";
 
 @Component({
