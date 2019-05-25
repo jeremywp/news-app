@@ -10,10 +10,13 @@ import {Article} from "../article";
 })
 export class TopComponent implements OnInit {
   articles$: Observable<Article[]>;
+  public category: string;
 
   constructor(private newsService: ApiService) {
 
   }
+
+  categoryOptions: string[] = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"];
 
   ngOnInit() {
     this.newsService.getTopNews()

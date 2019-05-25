@@ -23,6 +23,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {HttpClientModule} from "@angular/common/http";
 import {MatCardSmImage} from "../../node_modules/@angular/material/typings/esm5/card";
+import {FormsModule} from "@angular/forms";
 const firebaseConfig = config;
 
 @NgModule({
@@ -48,6 +49,7 @@ const firebaseConfig = config;
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

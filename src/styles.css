@@ -4,20 +4,27 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #dadfea; }
 .mat-card {
-  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
 
+button {
+  margin: 5px;
 }
 
 .mat-card-style {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 
 mat-card img{
   object-fit: cover; /*this makes de image in src fit to the size of specified below*/
   width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
-  height: 80%;
+  height: 67%;
+  margin-left: 10px;
 }
 
 .img-container {
@@ -39,6 +46,10 @@ a {
   flex: 1 1 auto;
 }
 
+.ng-template-container {
+  justify-content: space-between;
+}
+
 .loginInfo{
   display: flex;
 
@@ -50,6 +61,11 @@ a {
   outline: none;
 }
 
+.mat-toolbar-container{
+  display: flex;
+  flex-direction: row;
+}
+
 @media only screen and (max-width: 600px) {
   .userName {
     display: none;
@@ -57,6 +73,11 @@ a {
 
   .title {
     display:none;
+  }
+
+  .mat-toolbar-container{
+    display: flex;
+    flex-direction: column;
   }
 }
 

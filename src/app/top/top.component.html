@@ -1,12 +1,22 @@
+<mat-form-field>
+  <mat-select [(ngModel)]="category">
+    <mat-option *ngFor="let categoryOption of categoryOptions" [value]="categoryOption">{{categoryOption}}</mat-option>
+  </mat-select>
+</mat-form-field>
+
 <ng-container *ngFor="let article of articles$">
-  <mat-card *ngIf="article.content">
-    <mat-card-title-group>
-      <mat-card-title>
-        <a [href]="article.url">{{ article.title }}</a>
-      </mat-card-title>
-      <mat-card-subtitle *ngIf="article.author">by {{ article.author }}</mat-card-subtitle>
-      <img mat-card-sm-image class="mat-img" [src]="article.urlToImage">
-    </mat-card-title-group>
-    <mat-card-content>{{ article.description }}</mat-card-content>
+  <mat-card *ngIf="article.description && article.urlToImage">
+    <div class="mat-card-style">
+      <div>
+        <mat-card-title-group>
+          <mat-card-title>
+            <a [href]="article.url">{{ article.title }}</a>
+          </mat-card-title>
+          <mat-card-subtitle *ngIf="article.author">by {{ article.author }}</mat-card-subtitle>
+        </mat-card-title-group>
+        <mat-card-content>{{ article.description }}</mat-card-content>
+      </div>
+      <img mat-card-md-image class="mat-img" [src]="article.urlToImage">
+    </div>
   </mat-card>
 </ng-container>
