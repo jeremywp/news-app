@@ -13,7 +13,7 @@ import { AllComponent } from './all/all.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import {
   MatButtonModule,
-  MatCardModule,
+  MatCardModule, MatCheckboxModule,
   MatFormFieldModule,
   MatInputModule,
   MatSelectModule,
@@ -22,7 +22,6 @@ import {
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FlexLayoutModule} from "@angular/flex-layout";
 import {HttpClientModule} from "@angular/common/http";
-import {MatCardSmImage} from "../../node_modules/@angular/material/typings/esm5/card";
 import {FormsModule} from "@angular/forms";
 const firebaseConfig = config;
 
@@ -49,7 +48,8 @@ const firebaseConfig = config;
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    FormsModule
+    FormsModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

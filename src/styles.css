@@ -4,9 +4,7 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #dadfea; }
 .mat-card {
-  margin-top: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 6px;
 }
 
 button {
@@ -18,19 +16,22 @@ button {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  width: 99%;
 }
 
 mat-card img{
-  object-fit: cover; /*this makes de image in src fit to the size of specified below*/
-  width: 100%; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
-  height: 67%;
+  object-fit: cover;
+  width: 150px;
+  height: 112px;
   margin-left: 10px;
 }
 
-.img-container {
-  width: 150px;
-  height: 100px;
+mat-form-field {
+  margin: 5px 10px 0 10px;
+}
 
+label {
+  color: rgba(255,255,255,.7);
 }
 
 a {

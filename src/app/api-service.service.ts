@@ -14,9 +14,10 @@ export class ApiService {
 
   private topURL = 'https://newsapi.org/v2/top-headlines?' +
     'country=us' +
+    '&language=en' +
     '&apiKey=' + this.apiKey;
 
-  private allURL = 'https://newsapi.org/v2/everything?q=e&apiKey=' + this.apiKey;
+  private allURL = 'https://newsapi.org/v2/everything?q=e&language=en&apiKey=' + this.apiKey;
 
 
   getTopNews(){

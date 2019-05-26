@@ -1,15 +1,17 @@
-<form (submit)="searchArticles()">
-  <mat-form-field >
-    <mat-label>Search...</mat-label>
-    <input matInput [(ngModel)]="searchTerm" name="search">
-  </mat-form-field>
-  <button mat-raised-button color="accent" type="submit">
-    Search
-  </button>
-</form>
+<mat-card>
+  <form (submit)="searchArticles()">
+    <mat-form-field >
+      <mat-label>Search...</mat-label>
+      <input matInput [(ngModel)]="searchTerm" name="search">
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">
+      Search
+    </button>
+  </form>
+</mat-card>
 
 <ng-container *ngFor="let article of articles$">
-  <mat-card *ngIf="article.content">
+  <mat-card *ngIf="article.description && article.urlToImage">
     <div class="mat-card-style">
       <div>
         <mat-card-title-group>
@@ -19,8 +21,12 @@
           <mat-card-subtitle *ngIf="article.author">by {{ article.author }}</mat-card-subtitle>
         </mat-card-title-group>
         <mat-card-content>{{ article.description }}</mat-card-content>
+        <mat-checkbox (change)="this.saveArticle(user, article)">Save as favorite
+        </mat-checkbox>
       </div>
-      <img mat-card-md-image class="mat-img" [src]="article.urlToImage">
+      <div class="img-container">
+        <img class="mat-img" [src]="article.urlToImage">
+      </div>
     </div>
   </mat-card>
 </ng-container>
